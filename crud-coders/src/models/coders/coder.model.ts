@@ -4,3 +4,8 @@ export interface ICoder {
     avatar: string;
     id: string;
 }
+
+export interface IBodyUpdate {
+    name: string;
+    avatar: string;
+}

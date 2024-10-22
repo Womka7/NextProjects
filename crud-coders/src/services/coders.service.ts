@@ -1,4 +1,4 @@
-import { ICoder } from "@/models/coders/coder.model";
+import { IBodyUpdate, ICoder } from "@/models/coders/coder.model";
 import { HttpClient } from "@/utils/client-http";
 
 export class CoderService {
@@ -30,9 +30,9 @@ export class CoderService {
         }
     }
 
-    async update(id: string, coder: Partial<ICoder>) {
+    async update(id: string, coder:IBodyUpdate) {
         try {
-            const updateCoder = await this.httpClient.put<ICoder, Partial<ICoder>>(`coders/${id}`, coder);
+            const updateCoder = this.httpClient.put<ICoder, IBodyUpdate>(`coders/${id}`, coder);
             return updateCoder;
         } catch (error) {
             console.log(error);
@@ -40,4 +40,14 @@ export class CoderService {
         }
     }
 
-}
+    async create(coder:ICoder){
+        try {
+            const newCoder = this.httpClient.post<ICoder,ICoder>(`coders`,coder);
+            return newCoder;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+}   
