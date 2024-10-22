@@ -1,0 +1,60 @@
+.table-container {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: beige; /* Color de fondo igual que el contenedor del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black; /* Color del título */
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    border: 1px solid #fff; /* Borde blanco */
+    padding: 10px;
+    background-color: lightgray; /* Color de fondo de la cabecera */
+    color: black; /* Color del texto de la cabecera */
+}
+
+td {
+    border: 1px solid #fff; /* Borde blanco para las celdas */
+    padding: 10px;
+    text-align: center;
+    color: black; /* Color del texto de las celdas */
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: gray; /* Color del texto cuando no hay datos */
+    font-style: italic;
+}
+
+.edit-btn {
+    background-color: green; /* Color igual que el botón de enviar en el formulario */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px; /* Espaciado entre botones */
+}
+
+.delete-btn {
+    background-color: red; /* Color igual que el botón de limpiar en el formulario */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
