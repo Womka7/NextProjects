@@ -1,0 +1,36 @@
+// :root {
+  /* gradiente de fondo */
+  $purple-ligth:  rgb(192, 132, 252);
+  $pink: rgb(236, 72, 153);
+  $red:  rgb(239, 68, 68) ;
+  $background: linear-gradient(170deg, rgba(192,132,252,1) 5%, rgba(219,96,147,1) 57%, rgba(239,68,68,1) 100%);
+  /* gradiente fondo */
+  
+  $white: rgb(255, 255, 255);
+  $grey-ligth-pest: rgb(243, 244, 246);
+  $grey-button-paginations: rgb(229, 231, 235);
+  
+  /* colores de texto */
+  $black: rgb(31, 41, 55);
+  $grey-middle: rgb(75, 85, 99);
+  $grey-ligth: rgb(107, 114, 128);
+  
+  /* colores botones */
+  //  morado vacantes
+  $purple-button: rgb(168, 85, 247);
+  $button-hover:  rgb(147, 51, 234);
+  
+  // rosado companys
+  $pink-button: rgb(236, 72, 153);
+  $pink-hover: rgb(219, 39, 119) ;
+  
+  $red-buttons-delete:  rgb(239, 68, 68);
+  $red-hover-text:rgb(220, 38, 38)  ;
+  $white-hover-background: rgb(254, 242, 242);
+  
+  /* borders y focus  */
+
+  $grey-border:  rgb(229, 231, 235);
+  $focus-purple: rgb(233, 213, 255);
+  $focus-pink:  rgb(251, 207, 232);
+// }
