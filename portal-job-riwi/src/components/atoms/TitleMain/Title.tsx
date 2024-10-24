@@ -1,6 +1,6 @@
 import React from 'react'
 interface IH1Props{
-    children:React.ReactNode;
+    children:string;
 }
 
 export default function Title({children}:IH1Props) {
