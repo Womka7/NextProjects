@@ -10,7 +10,6 @@ export default function layoutPortal({ children }: Iprops) {
             <main>
             <Title children="Panel de administración"/>
                 {children}
-
             </main>
         </div>
     )
