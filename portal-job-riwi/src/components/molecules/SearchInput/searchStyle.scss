@@ -1,0 +1,14 @@
+
+.search-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid $grey-light;
+  
+    .icon {
+      min-width: 20px;
+    }
+}

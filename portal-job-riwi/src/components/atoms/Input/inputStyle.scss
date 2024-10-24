@@ -1,5 +1,36 @@
-.input-search{
+
+input{
     outline: none;
     border: none;
     width: 100%;
 }
+
+.input-focus {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    outline: none;
+    font-size: 12px;
+    
+    &.border-none {
+      border: none;
+    }
+    
+    &.border-purple {
+      border: 1px solid $grey-middle;
+      border-radius: 6px;
+      
+      &:focus {
+        border-color: $purple-button;
+      }
+    }
+    
+    &.border-pink {
+      border: 1px solid $grey-middle;
+      border-radius: 6px;
+      
+      &:focus {
+        border-color: $pink-color;
+      }
+    }
+  }

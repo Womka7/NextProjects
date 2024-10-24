@@ -1,5 +1,6 @@
 import React from 'react'
 import { icons } from './icons'
+import './iconStyle.scss'
 
 interface IPropsIcon {
     name: keyof typeof icons;

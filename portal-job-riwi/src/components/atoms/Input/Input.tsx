@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './inputStyle.scss'
 interface IPropsInput {
   type?: string;
   placeholder?: string;
@@ -23,4 +23,9 @@ export default function Input ({  type = 'text',  placeholder,  name,  value,  o
     />
   );
 };
+
+
+
+
+
 
