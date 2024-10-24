@@ -1,0 +1,18 @@
+.icon{
+    width:15px;
+    height:15px;
+    fill:currentColor;
+}
+
+.icon-grey{
+    color:$grey-middle
+}
+
+.different-color-icon{
+    &.icondelete{
+        color:$red-buttons-delete
+    }
+    &.iconedit{
+        color:$purple-button
+    }
+}
