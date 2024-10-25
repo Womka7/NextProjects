@@ -6,15 +6,17 @@ interface IPropsInput {
   name?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  borderStyle?: 'none' | 'purple' | 'pink';
+  // borderStyle?: 'none' | 'purple' | 'pink';
+  className?: string;
 }
 
-export default function Input ({  type = 'text',  placeholder,  name,  value,  onChange,  borderStyle = 'none'}: IPropsInput) {
+export default function Input ({  type = 'text',  placeholder,  name,  value,  onChange, className}: IPropsInput) {
   return (
     <input
-      className={`input-focus ${borderStyle === 'purple' ? 'border-purple' : ''} 
-      ${borderStyle === 'pink' ? 'border-pink' : ''} 
-      ${borderStyle === 'none' ? 'border-none' : ''}`}
+      className={`input-focus ${className}`}
+      //   ${borderStyle === 'purple' ? 'border-purple' : ''} 
+      // ${borderStyle === 'pink' ? 'border-pink' : ''} 
+      // ${borderStyle === 'none' ? 'border-none' : ''}
       type={type}
       placeholder={placeholder}
       name={name}

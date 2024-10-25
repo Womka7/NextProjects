@@ -1,4 +1,4 @@
-import Title from '@/components/atoms/TitleMain/Title';
+import Title from '@/components/atoms/TitleH1/Title';
 import React from 'react'
 import './contain.scss'
 interface Iprops {

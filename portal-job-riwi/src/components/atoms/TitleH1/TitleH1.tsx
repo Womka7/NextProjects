@@ -1,4 +1,5 @@
 import React from 'react'
+import './titleH1Style.scss'
 interface IH1Props{
     children:string;
 }

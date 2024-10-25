@@ -8,12 +8,12 @@ interface IPropsSearchInput {
   name?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  iconColor?: 'different-color-icon' | 'icon-grey';
+  iconColor?: 'icon-grey';
 }
 
 export default function SearchInput ({  placeholder,  name,  value,  onChange,  iconColor = 'icon-grey'}: IPropsSearchInput){
   return (
-    <div className="search-input">
+    <div className="search-input-div">
       <Icon name='iconsearch' colorChange={iconColor} />
       <Input
         type="text"
@@ -21,7 +21,7 @@ export default function SearchInput ({  placeholder,  name,  value,  onChange,  
         name={name}
         value={value}
         onChange={onChange}
-        borderStyle="none"
+        className='search-input'
       />
     </div>
   );

@@ -1,14 +1,14 @@
 import Input from '@/components/atoms/Input/Input';
 import React from 'react';
-
+import './borderInputStyle.scss';
 interface IPropsBorderedInput {
   name?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  borderStyle: 'purple' | 'pink';
+  dinamicFocus:'purple'|'pink';
 }
 
-export default function BorderInput({  name,  value,  onChange,  borderStyle}: IPropsBorderedInput) {
+export default function BorderInput({  name,  value,  onChange,dinamicFocus}: IPropsBorderedInput) {
   return (
     <div className="border-form-input">
       <Input
@@ -16,7 +16,7 @@ export default function BorderInput({  name,  value,  onChange,  borderStyle}: I
         name={name}
         value={value}
         onChange={onChange}
-        borderStyle={borderStyle}
+        className={`color-input color-input--${dinamicFocus}`}
       />
     </div>
   );

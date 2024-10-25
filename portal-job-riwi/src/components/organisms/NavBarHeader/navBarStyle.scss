@@ -1,0 +1,7 @@
+@import '../../../app/globals.scss';
+
+.nav-Bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
