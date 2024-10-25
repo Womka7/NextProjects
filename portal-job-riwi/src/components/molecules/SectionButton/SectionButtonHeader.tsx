@@ -12,12 +12,12 @@ export default function SectionButtonHeader({ panelDetail, iconColor = 'icon-gre
         <div className="header-section-button">
             <Link href='/jobs' className='direction-portal'>
                 <Button className={panelDetail === 'Vacantes' ? 'btn-jobs-ok' : ''}>
-                    <Icon name='iconbuilding' colorChange={iconColor} />
+                    <Icon name='iconbuilding' colorChange={iconColor} />Vacantes
                 </Button>
             </Link>
             <Link href='/companies' className='direction-portal'>
                 <Button className={panelDetail === 'Compañías' ? 'btn-company-ok' : ''}>
-                    <Icon name='iconbaggage' colorChange={iconColor} />
+                    <Icon name='iconbaggage' colorChange={iconColor} />Compañias
                 </Button>
             </Link>
         </div>

@@ -1,18 +1,8 @@
 @import '../../../app/globals.scss';
-.btn-jobs-ok{
-    background-color: $purple-button;
-    color: $white;
-    
-    &:hover{
-        background-color: $button-hover;
-    }
-}
 
-.btn-company-ok{
-    background-color: $pink-button;
-    color: $white;
-
-    &:hover{
-        background-color: $pink-hover;
-    }
+.header-section-button{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
 }

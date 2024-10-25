@@ -12,3 +12,21 @@
     background-color: $purple-button;
     color:$white
 }
+
+.btn-jobs-ok{
+    background-color: $purple-button;
+    color: $white;
+    
+    &:hover{
+        background-color: $button-hover;
+    }
+}
+
+.btn-company-ok{
+    background-color: $pink-button;
+    color: $white;
+
+    &:hover{
+        background-color: $pink-hover;
+    }
+}
