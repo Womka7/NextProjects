@@ -13,14 +13,15 @@
 //     }
 // }
 
-.search-input-wrapper {
+.search-input-div{
   position: relative;
   display: flex;
   align-items: center;
   background: $white;
+  border: 1px solid $grey-ligth;
   border-radius: 20px;
-  padding: 8px 16px;
-  gap: 8px;
+  padding: 2px 16px;
+  gap: 3px;
 
   .icon {
     &.icon-grey {
