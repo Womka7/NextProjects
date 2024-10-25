@@ -1,6 +1,6 @@
 @import '../../../app/globals.scss';ok 
 .button-gnral{
-    height: 30px;
+    height: 300px;
     width: auto;
     padding: 0 10px;
     border-radius: 20px;
@@ -13,10 +13,23 @@
     color:$white
 }
 
+.direction-portal{
+
+    text-decoration: none;
+}
 .btn-jobs-ok{
     background-color: $purple-button;
     color: $white;
-    
+    border-radius: 25px;
+    border:1px solid red;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    // width: 10px;
     &:hover{
         background-color: $button-hover;
     }

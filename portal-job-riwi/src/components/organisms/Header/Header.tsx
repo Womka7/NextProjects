@@ -11,7 +11,7 @@ export default function Header({ title,  info}:IProps) {
   return (
     <header className='header-page'>
         <Title>{title}</Title>
-        <NavBar info={info}/>
+        <NavBar info={info} panelDetail={info}/>
     </header>
   )
 }
