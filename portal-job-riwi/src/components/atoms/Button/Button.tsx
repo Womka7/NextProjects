@@ -4,12 +4,14 @@ interface IProps {
     children:React.ReactNode;
     className?: string;
     onClick?: () => void;
+    label?: string;
 }
 
-export default function Button({children,className= '', onClick}:IProps) {
+export default function Button({children,className= '',label, onClick}:IProps) {
     return (
         <button onClick={onClick} className={`button-gnral ${className}`}>
             {children}
+            {label}
         </button>
       );
 }

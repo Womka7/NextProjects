@@ -1,11 +1,79 @@
 @import '../../../app/globals.scss';
 
-.header-section-button{
+// .header-section-button{
+//     display: flex;
+//     height: 30px;
+//     gap: 15px;
+//     align-items: center;
+//     justify-content: center;
+//     background: $grey-ligth-pest;
+//     border-radius: 25px;
+// }
+
+.header-section-button {
     display: flex;
-    height: 30px;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
+    gap: 8px;
+    padding: 4px;
     background: $grey-ligth-pest;
-    border-radius: 25px;
+    border-radius: 100px;
+    width: fit-content;
+    
+    .direction-portal {
+        text-decoration: none;
+    }
+
+    .button-gnral {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 100px;
+        border: none;
+        background: transparent;
+        color: $grey-middle;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .btn-jobs-ok {
+        background:$purple-button;
+        color:$white;
+        
+        // .icon {
+        //     color: $white ;
+        // }
+        
+        &:hover {
+            background: darken($purple-button, 5%);
+        }
+    }
+    
+    .btn-company-ok {
+        background:$pink-button;
+        color: $white;
+        
+        // .icon {
+        //     color: $white;
+        // }
+        
+        &:hover {
+            background: darken($pink-hover, 5%);
+        }
+    }
+}
+
+    .icon-grey {
+    color: $grey-middle;
+}
+
+.different-color-icon {
+    color: $white;
 }
