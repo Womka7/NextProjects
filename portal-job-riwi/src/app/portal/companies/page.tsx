@@ -1,5 +1,4 @@
 
-import ContainerCard from "@/components/atoms/ContainerCard/ContainerCard";
 import Header from "@/components/organisms/Header/Header";
 import MainContainerCards from "@/components/organisms/MainContainerCards/MainContainerCards";
 interface IProps{
