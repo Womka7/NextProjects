@@ -1,0 +1,43 @@
+@import '../../../app/globals.scss';
+
+.btn-add-container {
+  .direction-portal {
+    text-decoration: none;
+  }
+
+  .button-gnral {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: $grey-middle;
+    cursor: pointer;
+    
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+  }
+
+  .btn-jobs-add {
+    background: $purple-button;
+    color: $white;
+    
+    &:hover {
+      background: darken($purple-button, 5%);
+    }
+  }
+  
+  .btn-company-add {
+    background: $pink-button;
+    color: $white;
+    
+    &:hover {
+      background: darken($pink-hover, 5%);
+    }
+  }
+}

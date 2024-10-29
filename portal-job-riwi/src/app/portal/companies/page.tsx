@@ -6,10 +6,10 @@ interface IProps{
     panelDetail: 'Vacantes' | 'Companias';
 }
 
-export default function Companies({ subtitle, panelDetail= "Companias"}:IProps) {
+export default function Companies({ subtitle= "Compañías", panelDetail= "Companias"}:IProps) {
     return (
         <>
-        <Header subtitle="Compañías" panelDetail={panelDetail}></Header>
+        <Header subtitle={subtitle} panelDetail={panelDetail}></Header>
 
         <MainContainerCards/>
         </>

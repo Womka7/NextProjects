@@ -17,12 +17,12 @@ export default function SectionButtonHeader({ panelDetail }: IProps) {
         <div className="header-section-button">
             <Link href="/portal/jobs" className="direction-portal">
                 <Button className={isVacantesActive ? 'btn-jobs-ok' : ''} label='Vacantes' >
-                    <Icon name="iconbaggage" colorChange={isVacantesActive ? 'different-color-icon' : 'icon-grey'} />
+                    <Icon name="iconbaggage" />
                 </Button>
             </Link>
             <Link href="/portal/companies" className="direction-portal">
-                <Button className={isCompaniasActive ? 'btn-company-ok' : ''} label='Compañias' >
-                    <Icon name="iconbuilding" colorChange={isCompaniasActive ? 'different-color-icon' : 'icon-grey'} />
+                <Button className={isCompaniasActive ? 'btn-company-ok' : ''} label='Compañías' >
+                    <Icon name="iconbuilding" />
                 </Button>
             </Link>
         </div>

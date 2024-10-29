@@ -14,7 +14,7 @@ interface IPropsSearchInput {
 export default function SearchInput ({  placeholder,  name,  value,  onChange,  iconColor = 'icon-grey'}: IPropsSearchInput){
   return (
     <div className="search-input-div">
-      <Icon name='iconsearch' colorChange={iconColor} />
+      <Icon name='iconsearch' />
       <Input
         type="text"
         placeholder='Buscar...'

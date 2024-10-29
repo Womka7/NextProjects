@@ -51,10 +51,6 @@
         background:$purple-button;
         color:$white;
         
-        // .icon {
-        //     color: $white ;
-        // }
-        
         &:hover {
             background: darken($purple-button, 5%);
         }
@@ -64,20 +60,8 @@
         background:$pink-button;
         color: $white;
         
-        // .icon {
-        //     color: $white;
-        // }
-        
         &:hover {
             background: darken($pink-hover, 5%);
         }
     }
-}
-
-    .icon-grey {
-    color: $grey-middle;
-}
-
-.different-color-icon {
-    color: $white;
 }

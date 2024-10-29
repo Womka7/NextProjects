@@ -4,10 +4,10 @@ interface IProps{
     subtitle:string;
     panelDetail :'Vacantes' | 'Companias';
 }
-export default function Jobs({ subtitle,panelDetail= "Vacantes"}:IProps) {
+export default function Jobs({ subtitle= "Vacantes",panelDetail= "Vacantes"}:IProps) {
     return (
         <>
-        <Header subtitle="Vacantes" panelDetail={panelDetail}/>
+        <Header subtitle={subtitle} panelDetail={panelDetail}/>
         <MainContainerCards/>
         </>
     );
