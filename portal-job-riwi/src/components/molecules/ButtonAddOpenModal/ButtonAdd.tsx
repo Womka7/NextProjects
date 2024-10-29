@@ -22,12 +22,10 @@ export default function ButtonAdd({ panelDetail }: IProps) {
   }
   const currentInfo = buttonConfig[panelDetail]
   return (
-    <div className='btn-add-container'>
-      <Link href={currentInfo.href} className="direction-portal">
+      <Link href={currentInfo.href} className="btn-add-container">
         <Button label={currentInfo.label} className={currentInfo.buttonClass} >
           <Icon name="add" />
         </Button>
       </Link>
-    </div>
   )
 }

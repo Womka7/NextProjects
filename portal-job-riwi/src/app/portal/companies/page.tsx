@@ -12,6 +12,10 @@ export default function Companies({ subtitle= "Compañías", panelDetail= "Compa
         <Header subtitle={subtitle} panelDetail={panelDetail}></Header>
 
         <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
         </>
     );
 }

@@ -9,6 +9,10 @@ export default function Jobs({ subtitle= "Vacantes",panelDetail= "Vacantes"}:IPr
         <>
         <Header subtitle={subtitle} panelDetail={panelDetail}/>
         <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
+        <MainContainerCards/>
         </>
     );
 }
