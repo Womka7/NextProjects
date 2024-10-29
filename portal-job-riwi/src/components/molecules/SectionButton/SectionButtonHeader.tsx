@@ -3,34 +3,26 @@ import React from 'react';
 import Button from '@/components/atoms/Button/Button';
 import Icon from '@/components/atoms/Icons/Icon';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import './sectionButtonHeaderStyle.scss';
 
-
-// import '../../atoms/Button/buttonStyle.scss';
-
 interface IProps {
-    panelDetail: 'Vacantes' | 'Compañías';
+    panelDetail: 'Vacantes' | 'Companias';
 }
 
 export default function SectionButtonHeader({ panelDetail }: IProps) {
-    const pathname = usePathname();
-
-    const isVacantesActive = pathname.includes('/portal/jobs');
-    const isCompaniasActive = pathname.includes('/portal/companies');
+    const isVacantesActive = panelDetail === 'Vacantes';
+    const isCompaniasActive = panelDetail === 'Companias';
 
     return (
         <div className="header-section-button">
             <Link href="/portal/jobs" className="direction-portal">
-                <Button className={isVacantesActive ? 'btn-jobs-ok' : ''}                >
-                    <Icon name="iconbuilding" colorChange={isVacantesActive ? 'different-color-icon' : 'icon-grey'} />
-                    Vacantes
+                <Button className={isVacantesActive ? 'btn-jobs-ok' : ''} label='Vacantes' >
+                    <Icon name="iconbaggage" colorChange={isVacantesActive ? 'different-color-icon' : 'icon-grey'} />
                 </Button>
             </Link>
             <Link href="/portal/companies" className="direction-portal">
-                <Button className={isCompaniasActive ? 'btn-company-ok' : ''}                >
-                    <Icon name="iconbaggage" colorChange={isCompaniasActive ? 'different-color-icon' : 'icon-grey'} />
-                    Compañías
+                <Button className={isCompaniasActive ? 'btn-company-ok' : ''} label='Compañias' >
+                    <Icon name="iconbuilding" colorChange={isCompaniasActive ? 'different-color-icon' : 'icon-grey'} />
                 </Button>
             </Link>
         </div>

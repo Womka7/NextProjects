@@ -1,10 +1,10 @@
-@import '../../../app/globals.scss';ok 
+@import '../../../app/globals.scss';ok
 .button-gnral{
-    height: 300px;
+    height: auto;
     width: auto;
     padding: 0 10px;
     border-radius: 20px;
-    gap: 8px;
+    // gap: 8px;
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -16,30 +16,4 @@
 .direction-portal{
 
     text-decoration: none;
-}
-.btn-jobs-ok{
-    background-color: $purple-button;
-    color: $white;
-    border-radius: 25px;
-    border:1px solid red;
-    height: 30px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-    // width: 10px;
-    &:hover{
-        background-color: $button-hover;
-    }
-}
-
-.btn-company-ok{
-    background-color: $pink-button;
-    color: $white;
-
-    &:hover{
-        background-color: $pink-hover;
-    }
 }

@@ -3,13 +3,12 @@ import SectionButtonHeader from '@/components/molecules/SectionButton/SectionBut
 import React from 'react'
 import './navBarStyle.scss'
 interface IProps{
-    info: string
-    panelDetail: string
+    panelDetail: 'Vacantes'|'Companias'
 }
-export default function NavBar({info, panelDetail}: IProps) {
+export default function NavBar({panelDetail}: IProps) {
   return (
     <nav className='nav-Bar'>
-      <SectionButtonHeader panelDetail={info}/>
+      <SectionButtonHeader panelDetail={panelDetail}/>
       <SearchInput/>
     </nav>
   )

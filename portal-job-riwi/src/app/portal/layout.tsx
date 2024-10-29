@@ -8,7 +8,7 @@ export default function layoutPortal({ children }: Iprops) {
     return (
         <div className='containerPortal' >
             <main>
-            <Title children="Panel de administración"/>
+                <Title label="Panel de administración" className='title-layout' />
                 {children}
             </main>
         </div>

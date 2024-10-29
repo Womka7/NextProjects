@@ -1,11 +1,12 @@
 import React from 'react'
 import './titleH1Style.scss'
 interface IH1Props{
-    children:string;
+    label:string;
+    className?:string;
 }
 
-export default function Title({children}:IH1Props) {
+export default function Title({label,className}:IH1Props) {
   return (
-    <h1 className='title-h1'>{children}</h1>
+    <h1 className={`title-h1 ${className}`}>{label}</h1>
   )
 }

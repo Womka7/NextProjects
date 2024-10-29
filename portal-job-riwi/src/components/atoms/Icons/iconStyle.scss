@@ -3,18 +3,18 @@
 .icon{
     width:15px;
     height:15px;
-    fill:currentColor;
+    // fill:currentColor;
 }
 
 .icon-grey{
-    color:$grey-middle
+    // color:$grey-middle
 }
 
 .different-color-icon{
     &.icondelete{
-        color:$red-buttons-delete
+        // color:$red-buttons-delete
     }
     &.iconedit{
-        color:$purple-button
+        // color:$purple-button
     }
 }

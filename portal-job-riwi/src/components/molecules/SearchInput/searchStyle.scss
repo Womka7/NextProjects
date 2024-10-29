@@ -1,27 +1,14 @@
 @import '../../../app/globals.scss';
-// .search-input {
-//     display: flex;
-//     align-items: center;
-//     gap: 8px;
-//     background-color: $white;
-//     border-radius: 8px;
-//     padding: 8px 12px;
-//     border: 1px solid $grey-light;
-  
-//     .icon {
-//       min-width: 20px;
-//     }
-// }
-
 .search-input-div{
   position: relative;
   display: flex;
   align-items: center;
   background: $white;
-  border: 1px solid $grey-ligth;
+  border: 1px solid $grey-ligth-pest;
   border-radius: 20px;
-  padding: 2px 16px;
+  padding-left: 5px;
   gap: 3px;
+  height: 30px;
 
   .icon {
     &.icon-grey {
@@ -35,7 +22,7 @@
     background: transparent;
     padding: 0;
     width: 100%;
-    
+
     &:focus {
       outline: none;
       border: none;
@@ -43,7 +30,7 @@
     }
 
     &::placeholder {
-      color: $grey-middle;
+      color: $grey-ligth  ;
     }
   }
 }

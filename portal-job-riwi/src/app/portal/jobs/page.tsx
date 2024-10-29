@@ -1,18 +1,13 @@
 import ContainerCard from "@/components/atoms/ContainerCard/ContainerCard";
 import Header from "@/components/organisms/Header/Header";
-
-type PanelType = 'Vacantes' | 'Compañías';
 interface IProps{
-    title: string;
-    // subtitle: string;
-    info: PanelType;
+    subtitle:string;
+    panelDetail :'Vacantes' | 'Companias';
 }
-export default function Jobs({ info= "Vacantes", title="Portal vacantes"}:IProps) {
-
+export default function Jobs({ subtitle,panelDetail= "Vacantes"}:IProps) {
     return (
         <>
-        <Header title={title} info={info}></Header>
-
+        <Header subtitle="Vacantes" panelDetail={panelDetail}/>
         <ContainerCard/>
         </>
     );
