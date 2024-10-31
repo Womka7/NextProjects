@@ -1,8 +1,8 @@
-export interface ICompany{
-    content:          ContentCompany[];
+export interface IVacant {
+    content:          ContentVacant[];
     pageable:         Pageable;
-    totalElements:    number;
     totalPages:       number;
+    totalElements:    number;
     last:             boolean;
     numberOfElements: number;
     size:             number;
@@ -12,37 +12,39 @@ export interface ICompany{
     empty:            boolean;
 }
 
-export interface ContentCompany {
-    id:       string;
-    name:     string;
-    location: string;
-    contact:  string;
-    vacants:  Vacant[];
-}
-
-export interface Vacant {
+export interface ContentVacant {
     id:          number;
     title:       string;
     description: string;
     status:      string;
+    company:     Company;
 }
+
+export interface Company {
+    id:       string;
+    name:     string;
+    location: string;
+    contact:  string;
+}
+
 export interface Pageable {
     pageNumber: number;
     pageSize:   number;
     sort:       Sort;
     offset:     number;
-    unpaged:    boolean;
     paged:      boolean;
+    unpaged:    boolean;
 }
 
 export interface Sort {
-    unsorted: boolean;
     sorted:   boolean;
+    unsorted: boolean;
     empty:    boolean;
 }
 
-export interface ICreateCompany{
-    name: string;
-    location: string;
-    contact: string;
+export interface ICreateVacant {
+    title: string;
+    description: string;
+    status: string;
+    companyId: string;
 }
