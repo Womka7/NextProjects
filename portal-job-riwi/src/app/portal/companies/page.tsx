@@ -1,21 +1,31 @@
 
 import Header from "@/components/organisms/Header/Header";
 import MainContainerCards from "@/components/organisms/MainContainerCards/MainContainerCards";
+import { ServiceApi } from "@/services/portal.service";
 interface IProps{
-    subtitle: string;
-    panelDetail: 'Vacantes' | 'Companias';
+    searchParams: {
+        page?: string;
+        size?: string;
+        name?: string;
+    }
 }
+export const generateMetadata = async ({ searchParams }: IProps) => {
+    const page = searchParams.page ?? '1';
+    return {
+        title: `Compañías - Página ${page}`,
+        description: 'Panel de compañías'
+    }
+}
+export default async function Companies({searchParams}:IProps) {
+    const apiService = new ServiceApi();
+    const page = searchParams.page ? parseInt(searchParams.page) : 1;
+    const size = searchParams.size ? parseInt(searchParams.size) : 6;
 
-export default function Companies({ subtitle= "Compañías", panelDetail= "Companias"}:IProps) {
+    const companies = await apiService.find(`company?page=${page}&size=${size}`);
     return (
         <>
-        <Header subtitle={subtitle} panelDetail={panelDetail}></Header>
-
-        <MainContainerCards/>
-        <MainContainerCards/>
-        <MainContainerCards/>
-        <MainContainerCards/>
-        <MainContainerCards/>
+        <Header subtitle='Compañías' panelDetail='Companias'></Header>
+        <MainContainerCards contentType="company" data={companies} page={page} />
         </>
     );
 }
