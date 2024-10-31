@@ -1,0 +1,9 @@
+@import '../../../app/globals.scss';
+
+.cont-card-text{
+    width: 100%;
+    gap: 4px;
+    display: flex;
+    border: 3px  solid black;
+    flex-direction: column;
+}

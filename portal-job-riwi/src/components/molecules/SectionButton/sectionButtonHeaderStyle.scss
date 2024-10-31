@@ -1,7 +1,7 @@
 @import '../../../app/globals.scss';
 
 .header-section-button {
-    height: 20px;
+    height: 30px;
     display: flex;
     background: $grey-ligth-pest;
     border-radius: 100px;
@@ -15,7 +15,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        font-size: 8px;
+        font-size: 12px;
         padding: 2px 8px;
         border-radius: 100px;
         border: none;
@@ -24,8 +24,8 @@
         cursor: pointer;
 
         .icon {
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
         }
     }
 

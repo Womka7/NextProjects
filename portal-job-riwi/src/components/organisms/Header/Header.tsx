@@ -1,8 +1,8 @@
 import React from 'react'
 import NavBar from '../NavBarHeader/NavBar';
 import './header.scss'
-import Subtitle from '@/components/atoms/SubtitleH2/SubtitleH2';
 import ButtonAdd from '@/components/molecules/ButtonAddOpenModal/ButtonAdd';
+import SubtitleH2 from '@/components/atoms/SubtitleH2/SubtitleH2';
 interface IProps{
     subtitle: string;
     panelDetail: 'Vacantes' | 'Companias';
@@ -12,7 +12,7 @@ export default function Header({ subtitle, panelDetail}:IProps) {
     <header className='header-page'>
         <NavBar panelDetail={panelDetail}/>
         <div className='sub-header'>
-          <Subtitle>{subtitle}</Subtitle>
+          <SubtitleH2>{subtitle}</SubtitleH2>
           <ButtonAdd panelDetail={panelDetail}/>
         </div>
     </header>

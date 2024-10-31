@@ -1,11 +1,14 @@
 import './containerCardStyle.scss'
 import React from 'react'
 
-
-export default function ContainerCard() {
+interface IProps{
+  children: React.ReactNode;
+  page?: string;
+}
+export default function ContainerCard({children }:IProps) {
   return (
-    <div className='container-card'>
-      
-    </div>
+    <article className='container-card'>
+      {children}
+    </article>
   )
 }
