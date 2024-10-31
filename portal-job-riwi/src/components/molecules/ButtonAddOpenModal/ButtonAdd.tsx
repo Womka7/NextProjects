@@ -1,13 +1,13 @@
-import Button from '@/components/atoms/Button/Button'
-import Icon from '@/components/atoms/Icons/Icon'
+import { Button } from '@/components/atoms/Button/Button';
 import './buttonAddStyle.scss'
 import Link from 'next/link'
 import React from 'react'
+import { Icon } from '@/components/atoms/Icons/Icon';
 
 interface IProps {
   panelDetail: 'Vacantes' | 'Companias';
 }
-export default function ButtonAdd({ panelDetail }: IProps) {
+export const ButtonAdd=({ panelDetail }: IProps) =>{
   const buttonConfig = {
     Vacantes: {
       label: 'Agregar Vacante',

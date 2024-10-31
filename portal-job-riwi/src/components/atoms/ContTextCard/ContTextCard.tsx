@@ -4,7 +4,7 @@ import React from 'react'
 interface IProps{
     children: React.ReactNode
 }
-export default function ContTextCard({children}:IProps) {
+export const ContTextCard=({children}:IProps)=> {
   return (
     <div className='cont-card-text'>
       {children}

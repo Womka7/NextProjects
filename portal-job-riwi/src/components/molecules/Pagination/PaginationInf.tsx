@@ -1,18 +1,18 @@
 "use client"
-import Button from '@/components/atoms/Button/Button';
-import Icon from '@/components/atoms/Icons/Icon';
 import { icons } from '@/components/atoms/Icons/icons';
-import Parrafo from '@/components/atoms/Parrafo/Parrafo';
 import { ICompany } from '@/models/company.model';
 import { IVacant } from '@/models/vacant.model';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react'
 import './paginationInfStyle.scss'
+import { Button } from '@/components/atoms/Button/Button';
+import { Icon } from '@/components/atoms/Icons/Icon';
+import { Parrafo } from '@/components/atoms/Parrafo/Parrafo';
 
 interface IProps {
     data: IVacant | ICompany;
 }
-export default function PaginationInf({ data }: IProps) {
+export const PaginationInf=({ data }: IProps)=> {
     const router = useRouter();
     const searchParams = useSearchParams();
 

@@ -1,22 +1,22 @@
-import Header from "@/components/organisms/Header/Header";
-import MainContainerCards from "@/components/organisms/MainContainerCards/MainContainerCards";
+import { Header } from "@/components/organisms/Header/Header";
+import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
 import { ServiceApi } from "@/services/portal.service";
-interface IProps {
+interface IJobsProps {
     searchParams: {
-        page?: string;
-        size?: string;
-        name?: string;
+        page: string;
+        size: string;
+        name: string;
     }
 }
-export const generateMetadata = async ({ searchParams }: IProps) => {
-    const page = searchParams.page ?? '1';
+export const generateMetadata = async ({ searchParams }: IJobsProps) => {
+    const page = searchParams.page ?? 1;
     return {
         title: `Vacantes - Página ${page}`,
         description: 'Panel de vacantes'
     }
 }
-export default async function Jobs({ searchParams }: IProps) {
-    const apiService = new ServiceApi();
+export default async function Jobs({ searchParams }: IJobsProps) {
+    // const apiService = new ServiceApi();
     const page = searchParams.page ? parseInt(searchParams.page) : 1;
     const size = searchParams.size ? parseInt(searchParams.size) : 6;
 
@@ -24,7 +24,7 @@ export default async function Jobs({ searchParams }: IProps) {
     return (
         <>
             <Header subtitle="Vacantes" panelDetail="Vacantes" />
-            <MainContainerCards contentType="vacant" data={vacancies} page={page} />
+            <MainContainerCards  contentType="vacant" data={vacancies} page={page} />
         </>
     );
 }

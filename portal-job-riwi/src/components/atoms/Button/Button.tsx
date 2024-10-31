@@ -7,7 +7,7 @@ interface IProps {
     label?: string;
 }
 
-export default function Button({children,className= '',label, onClick}:IProps) {
+export const Button=({children,className= '',label, onClick}:IProps)=> {
     return (
         <button onClick={onClick} className={`button-gnral ${className}`}>
             {children}

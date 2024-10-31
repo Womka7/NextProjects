@@ -1,16 +1,16 @@
 'use client'
 import React from 'react';
-import Button from '@/components/atoms/Button/Button';
-import Icon from '@/components/atoms/Icons/Icon';
 import Link from 'next/link';
 import './sectionButtonHeaderStyle.scss';
 import { icons } from '@/components/atoms/Icons/icons';
+import { Icon } from '@/components/atoms/Icons/Icon';
+import { Button } from '@/components/atoms/Button/Button';
 
 interface IProps {
     panelDetail: 'Vacantes' | 'Companias';
 }
 
-export default function SectionButtonHeader({ panelDetail }: IProps) {
+export const SectionButtonHeader=({ panelDetail }: IProps)=> {
     const buttonConfig = {
         Vacantes: {
             label: 'Vacantes',

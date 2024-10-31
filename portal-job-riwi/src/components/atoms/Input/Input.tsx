@@ -9,7 +9,7 @@ interface IPropsInput {
   className?: string;
 }
 
-export default function Input ({  type = 'text',  placeholder,  name,  value,  onChange, className}: IPropsInput) {
+export const Input= ({  type = 'text',  placeholder,  name,  value,  onChange, className}: IPropsInput) =>{
   return (
     <input
       className={`input-focus ${className}`}

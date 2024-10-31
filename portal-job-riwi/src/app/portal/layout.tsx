@@ -1,6 +1,6 @@
 import React from 'react'
 import './contain.scss'
-import TitleH1 from '@/components/atoms/TitleH1/TitleH1';
+import { TitleH1 } from '@/components/atoms/TitleH1/TitleH1';
 interface Iprops {
     children: React.ReactNode;
 }

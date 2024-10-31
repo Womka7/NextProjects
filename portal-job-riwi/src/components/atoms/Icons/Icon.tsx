@@ -6,7 +6,7 @@ interface IPropsIcon {
     name: keyof typeof icons;
 }
 
-export default function Icon({ name }: IPropsIcon) {
+export const Icon=({ name }: IPropsIcon)=> {
     const ComponentIcon = icons[name];
     const iconStyle = 'icon';
     return <ComponentIcon className={iconStyle}/>

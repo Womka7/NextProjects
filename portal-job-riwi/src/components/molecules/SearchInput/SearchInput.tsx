@@ -1,7 +1,7 @@
-import Icon from '@/components/atoms/Icons/Icon';
-import Input from '@/components/atoms/Input/Input';
 import React from 'react';
 import './searchStyle.scss'
+import { Icon } from '@/components/atoms/Icons/Icon';
+import { Input } from '@/components/atoms/Input/Input';
 
 interface IPropsSearchInput {
   placeholder?: string;
@@ -11,7 +11,7 @@ interface IPropsSearchInput {
   iconColor?: 'icon-grey';
 }
 
-export default function SearchInput ({  placeholder,  name,  value,  onChange,  iconColor = 'icon-grey'}: IPropsSearchInput){
+export const SearchInput= ({  placeholder,  name,  value,  onChange,  iconColor = 'icon-grey'}: IPropsSearchInput)=>{
   return (
     <div className="search-input-div">
       <Icon name='iconsearch' />

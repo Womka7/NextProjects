@@ -5,7 +5,7 @@ interface IProps{
   children: React.ReactNode;
   page?: string;
 }
-export default function ContainerCard({children }:IProps) {
+export const ContainerCard=({children }:IProps)=> {
   return (
     <article className='container-card'>
       {children}

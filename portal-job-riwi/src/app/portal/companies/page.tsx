@@ -1,6 +1,6 @@
 
-import Header from "@/components/organisms/Header/Header";
-import MainContainerCards from "@/components/organisms/MainContainerCards/MainContainerCards";
+import { Header } from "@/components/organisms/Header/Header";
+import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
 import { ServiceApi } from "@/services/portal.service";
 interface IProps{
     searchParams: {

@@ -1,6 +1,6 @@
-import ContTextCard from '@/components/atoms/ContTextCard/ContTextCard';
-import Parrafo from '@/components/atoms/Parrafo/Parrafo';
-import SubtitleH3 from '@/components/atoms/SubtitleH3/SubtitleH3';
+import { ContTextCard } from '@/components/atoms/ContTextCard/ContTextCard';
+import { Parrafo } from '@/components/atoms/Parrafo/Parrafo';
+import { SubtitleH3 } from '@/components/atoms/SubtitleH3/SubtitleH3';
 import { ContentCompany } from '@/models/company.model';
 import { ContentVacant } from '@/models/vacant.model';
 import React from 'react'
@@ -10,7 +10,7 @@ interface IProps {
     data: ContentVacant | ContentCompany;
 }
 
-export default function CardInfo({ contentType, data }: IProps) {
+export const CardInfo=({ contentType, data }: IProps)=> {
     if (contentType === 'vacant') {
         const showVacant = data as ContentVacant;
         return (

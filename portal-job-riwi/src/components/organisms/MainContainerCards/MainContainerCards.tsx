@@ -1,11 +1,9 @@
-import CardInfo from '@/components/molecules/CardInfo/CardInfo';
+import { ContainerCard } from '@/components/atoms/ContainerCard/ContainerCard';
 import './mainContainerStyle.scss'
-import ContainerCard from '@/components/atoms/ContainerCard/ContainerCard'
 import { ContentCompany } from '@/models/company.model';
 import { ContentVacant } from '@/models/vacant.model';
 import React from 'react'
-import SubtitleH3 from '@/components/atoms/SubtitleH3/SubtitleH3';
-import PaginationInf from '@/components/molecules/Pagination/PaginationInf';
+import { CardInfo } from '@/components/molecules/CardInfo/CardInfo';
 interface IProps {
   contentType: 'vacant' | 'company';
     data: {
@@ -14,7 +12,7 @@ interface IProps {
     };
     page?: number;
 }
-export default function MainContainerCards({ contentType, data, page=1}: IProps) {
+export const MainContainerCards=({ contentType, data, page=1}: IProps)=> {
   return (
     <div className='main-all-cards'>
       {data.content.map((item) => (

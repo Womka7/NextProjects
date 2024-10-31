@@ -5,7 +5,7 @@ interface IH1Props{
     className?:string;
 }
 
-export default function TitleH1({label,className}:IH1Props) {
+export const TitleH1=({label,className}:IH1Props)=> {
   return (
     <h1 className={`title-h1 ${className}`}>{label}</h1>
   )
