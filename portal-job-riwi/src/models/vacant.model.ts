@@ -48,3 +48,4 @@ export interface ICreateVacant {
     status: string;
     companyId: string;
 }
+

@@ -1,0 +1,19 @@
+@import '../../../app/globals.scss';
+
+.form-gnrl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 25px;
+}
+.btn-jobs-ok {
+    background:$purple-button;
+    color:$white;
+    
+    &:hover {
+        background: darken($purple-button, 5%);
+    }
+}
+

@@ -17,7 +17,7 @@ export const CardInfo=({ contentType, data }: IProps)=> {
             <>
                 <ContTextCard>
                     <SubtitleH3>{showVacant.title}</SubtitleH3>
-                    <Parrafo>{showVacant.description}</Parrafo>
+                    <Parrafo>Descripción: {showVacant.description}</Parrafo>
                     <Parrafo>Estado: {showVacant.status}</Parrafo>
                     <Parrafo>Compañía: {showVacant.company.name}</Parrafo>
                 </ContTextCard>

@@ -1,10 +1,13 @@
 import React from 'react'
 
 interface IProps{
-    children:string;
+    id?:string;
+    name?:string;
+    required?:boolean;
+    value?:string;
 }
-export const Textarea=({ children}:IProps)=> {
+export const Textarea=({ id,name,required,value}:IProps)=> {
   return (
-    <textarea className='text-area'> {children }   </textarea>
+    <textarea id={id}name={name} required={ required} className='text-area' value={value}/>
   )
 }

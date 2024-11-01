@@ -1,6 +1,8 @@
 import { Header } from "@/components/organisms/Header/Header";
 import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
-import { ServiceApi } from "@/services/portal.service";
+import { Service } from "@/services/portal.service";
+ 
+const useServices = new Service()
 interface IJobsProps {
     searchParams: {
         page: string;
@@ -16,14 +18,13 @@ export const generateMetadata = async ({ searchParams }: IJobsProps) => {
     }
 }
 export default async function Jobs({ searchParams }: IJobsProps) {
-    // const apiService = new ServiceApi();
     const page = searchParams.page ? parseInt(searchParams.page) : 1;
     const size = searchParams.size ? parseInt(searchParams.size) : 6;
 
-    const vacancies= await apiService.find(`vacants?page=${page}&size=${size}`);
+    const vacancies= await useServices.findVacant(page,size);
     return (
         <>
-            <Header subtitle="Vacantes" panelDetail="Vacantes" />
+            <Header subtitle="Vacantes" panelDetail="Vacantes"  type="Vacantes"/>
             <MainContainerCards  contentType="vacant" data={vacancies} page={page} />
         </>
     );

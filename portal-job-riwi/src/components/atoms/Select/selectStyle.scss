@@ -1,0 +1,9 @@
+@import '../../../app/globals.scss';
+
+.select {
+    height: 40px;
+    border: 1px solid $grey-border;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}

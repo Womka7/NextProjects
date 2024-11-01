@@ -16,7 +16,7 @@ export class HttpClient {
         return await this.handleResponse(response);
     }
 
-    async post<B, T>(url: string, body: B): Promise<T> {
+    async post<T, B>(url: string, body: B): Promise<T> {
         const headers = await this.getHeader();
         const response = await fetch(`${this.baseUrl}/${url}`, {
             headers:headers,
@@ -26,7 +26,7 @@ export class HttpClient {
         return await this.handleResponse(response);
     }
 
-    async put<B, T>(url: string, body: B): Promise<T> {
+    async put<T, B>(url: string, body: B): Promise<T> {
         const headers = await this.getHeader();
         const response = await fetch(`${this.baseUrl}/${url}`, {
             headers:headers,
@@ -36,12 +36,13 @@ export class HttpClient {
         return await this.handleResponse(response);
     }
 
-    async delete(url: string): Promise<void> {
+    async delete<T>(url: string): Promise<T> {
         const headers = await this.getHeader();
-        await fetch(`${this.baseUrl}/${url}`, {
+        const response = await fetch(`${this.baseUrl}/${url}`, {
             headers:headers,
             method: "DELETE",
         });
+        return this.handleResponse(response);
     }
 
     private async getHeader(){
@@ -52,7 +53,8 @@ export class HttpClient {
 
     private async handleResponse(response: Response){
         if(!response.ok){
-            throw new Error( "Ocurrió un error en la solicitud")
+            const errorData = await response.json();
+            throw new Error(errorData.message ||  "Ocurrió un error en la solicitud")
         }
         return await response.json();
     }

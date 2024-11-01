@@ -1,0 +1,9 @@
+@import '../../../app/globals.scss';
+
+.container-input-label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 18px;
+}

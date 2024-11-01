@@ -9,6 +9,7 @@ export default function layoutPortal({ children }: Iprops) {
         <div className='containerPortal' >
             <main>
                 <TitleH1 label="Panel de administración" className='title-layout' />
+                
                 {children}
             </main>
         </div>

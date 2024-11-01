@@ -6,26 +6,25 @@ import { Icon } from '@/components/atoms/Icons/Icon';
 
 interface IProps {
   panelDetail: 'Vacantes' | 'Companias';
+  onClick?: () => void;
 }
-export const ButtonAdd=({ panelDetail }: IProps) =>{
+export const ButtonAdd=({ panelDetail,onClick }: IProps) =>{
   const buttonConfig = {
     Vacantes: {
       label: 'Agregar Vacante',
-      href: '/portal/vacante/crear',
       buttonClass: 'btn-jobs-add'
     },
     Companias: {
       label: 'Agregar Compañía',
-      href: '/portal/compania/crear',
       buttonClass: 'btn-company-add'
     }
   }
   const currentInfo = buttonConfig[panelDetail]
   return (
-      <Link href={currentInfo.href} className="btn-add-container">
-        <Button label={currentInfo.label} className={currentInfo.buttonClass} >
+      <div  className="btn-add-container">
+        <Button label={currentInfo.label} className={currentInfo.buttonClass}  onClick={onClick}>
           <Icon name="add" />
         </Button>
-      </Link>
+      </div>
   )
 }

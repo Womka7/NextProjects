@@ -1,33 +1,32 @@
-
 import { Header } from "@/components/organisms/Header/Header";
 import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
-import { ServiceApi } from "@/services/portal.service";
-interface IProps{
+import { Service } from "@/services/portal.service";
+ 
+const useServices = new Service()
+interface ICompanyProps {
     searchParams: {
-        page?: string;
-        size?: string;
-        name?: string;
+        page: string;
+        size: string;
+        name: string;
     }
 }
-export const generateMetadata = async ({ searchParams }: IProps) => {
-    const page = searchParams.page ?? '1';
+export const generateMetadata = async ({ searchParams }: ICompanyProps) => {
+    const page = searchParams.page ?? 1;
     return {
-        title: `Compañías - Página ${page}`,
+        title: `Compañía - Página ${page}`,
         description: 'Panel de compañías'
     }
 }
-export default async function Companies({searchParams}:IProps) {
-    const apiService = new ServiceApi();
+export default async function Companys({ searchParams }: ICompanyProps) {
     const page = searchParams.page ? parseInt(searchParams.page) : 1;
     const size = searchParams.size ? parseInt(searchParams.size) : 6;
+    const name = searchParams.name ? String(searchParams.name) :'';
 
-    const companies = await apiService.find(`company?page=${page}&size=${size}`);
+    const companies= await useServices.findCompany(page,size,name);
     return (
         <>
-        <Header subtitle='Compañías' panelDetail='Companias'></Header>
-        <MainContainerCards contentType="company" data={companies} page={page} />
+            <Header subtitle="Compañías" panelDetail="Companias"  type="Companias"/>
+            <MainContainerCards  contentType="company" data={companies} page={page} />
         </>
     );
 }
-
-
