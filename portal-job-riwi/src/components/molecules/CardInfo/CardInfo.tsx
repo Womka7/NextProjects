@@ -15,8 +15,8 @@ export const CardInfo=({ contentType, data }: IProps)=> {
         const showVacant = data as ContentVacant;
         return (
             <>
+            <SubtitleH3>{showVacant.title}</SubtitleH3>
                 <ContTextCard>
-                    <SubtitleH3>{showVacant.title}</SubtitleH3>
                     <Parrafo>Descripción: {showVacant.description}</Parrafo>
                     <Parrafo>Estado: {showVacant.status}</Parrafo>
                     <Parrafo>Compañía: {showVacant.company.name}</Parrafo>
