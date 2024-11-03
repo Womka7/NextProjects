@@ -1,14 +1,16 @@
+"use client"
 import { Button } from '@/components/atoms/Button/Button';
 import './buttonAddStyle.scss'
-import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@/components/atoms/Icons/Icon';
+import { ModalFormVacancy } from '@/components/organisms/ModalFormVacancy/ModalFormVacancy';
 
 interface IProps {
   panelDetail: 'Vacantes' | 'Companias';
-  onClick?: () => void;
 }
-export const ButtonAdd=({ panelDetail,onClick }: IProps) =>{
+export const ButtonAdd=({ panelDetail }: IProps) =>{
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const buttonConfig = {
     Vacantes: {
       label: 'Agregar Vacante',
@@ -19,12 +21,45 @@ export const ButtonAdd=({ panelDetail,onClick }: IProps) =>{
       buttonClass: 'btn-company-add'
     }
   }
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const renderModal = () => {
+    if (!isModalOpen) return null;
+
+    switch (panelDetail) {
+      case 'Vacantes':
+        return (
+          <ModalFormVacancy
+            onClose={handleCloseModal}
+            titlePrimary="Agregar Vacante"
+            editButtonLabel="Agregar"
+          />
+        );
+      case 'Companias':
+        return (
+          <h1>holaa</h1>
+        );
+      default:
+        return null;
+    }
+  };
+
   const currentInfo = buttonConfig[panelDetail]
+
   return (
+    <>
       <div  className="btn-add-container">
-        <Button label={currentInfo.label} className={currentInfo.buttonClass}  onClick={onClick}>
+        <Button label={currentInfo.label} className={currentInfo.buttonClass}  onClick={handleOpenModal}>
           <Icon name="add" />
         </Button>
       </div>
+      {renderModal()}
+    </>
   )
 }
