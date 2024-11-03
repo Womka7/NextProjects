@@ -6,8 +6,13 @@ interface IProps {
     onClose: () => void
 }
 export const Modal = ({ children, onClose }: IProps) => {
+    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
     return (
-        <div className={'bg-modal'}>
+        <div className={'bg-modal'} onClick={handleOverlayClick}>
             <div className={'container-modal'}>
                 <Button onClick={onClose} className='button-icon'                      >
                     <Icon name="iconclose" />

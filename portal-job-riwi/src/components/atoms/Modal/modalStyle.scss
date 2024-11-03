@@ -15,9 +15,8 @@
 
 .container-modal {
     width: 100%;
-    max-width: 800px;
+    max-width: 60%;
     height: auto;
-    max-height: calc(100vh - 70px);
     margin: 0 auto;
     gap: 35px;
     min-height: calc(100vh - auto);
@@ -31,9 +30,10 @@
     position: absolute;
     border: none;
     cursor: pointer;
-    background-color: transparent;
-    font-size: 30px;
+    background-color: red;
+    color:$black;
+    font-size: 60px;
     top: 16px;
     left: 95%;
-    transform: translateX(-50%);
+    transform: translateX(-58%);
 }
