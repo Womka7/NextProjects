@@ -6,6 +6,7 @@ import * as yup from "yup"
 import { FormField } from "../../molecules/common/FormField"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
+import { AuthService } from "@/app/infrastructure/services/auth.service"
 
 export const loginScheme = yup.object()
     .shape({
@@ -33,8 +34,6 @@ export const LoginForm = () => {
 
     const router = useRouter()
     const handleLogin = async (data: ILoginRequest) => {
-        console.log(data);
-        // service login
         try {
             const result = await signIn("credentials", {
               redirect: false,

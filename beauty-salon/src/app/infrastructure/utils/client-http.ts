@@ -1,4 +1,4 @@
-const defaultBaseUrl = "https://beautysalongates-production.up.railway.app/api/v1/"
+const defaultBaseUrl = "https://beautysalongates-production.up.railway.app/api/v1"
 
 export class HttpClient{
   private baseUrl : string;
@@ -22,6 +22,7 @@ export class HttpClient{
     }
     return await response.json();
   }
+
 
   async get<T>(url: string): Promise<T> {
     const headers = await this.getHeader();
@@ -49,6 +50,7 @@ export class HttpClient{
       method: "POST",
       body: JSON.stringify(body),
     })
+    console.log(response);
     return this.handleResponse(response);
   }
 
