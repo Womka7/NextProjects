@@ -1,4 +1,4 @@
-import './ContTextCardStyle.scss'
+import './contTextCardStyle.scss'
 import React from 'react'
 
 interface IProps{
