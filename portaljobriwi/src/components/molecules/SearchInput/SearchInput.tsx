@@ -11,7 +11,7 @@ interface IPropsSearchInput {
   iconColor?: 'icon-grey';
 }
 
-export const SearchInput= ({  placeholder,  name,  value,  onChange,  iconColor = 'icon-grey'}: IPropsSearchInput)=>{
+export const SearchInput= ({  name,  value,  onChange}: IPropsSearchInput)=>{
   return (
     <div className="search-input-div">
       <Icon name='iconsearch' />

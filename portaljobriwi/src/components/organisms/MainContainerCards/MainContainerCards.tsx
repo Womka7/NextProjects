@@ -12,7 +12,7 @@ interface IProps {
     };
     page?: number;
 }
-export const MainContainerCards=({ contentType, data, page=1}: IProps)=> {
+export const MainContainerCards=({ contentType, data}: IProps)=> {
   return (
     <div className='main-all-cards'>
       {data.content.map((item) => (

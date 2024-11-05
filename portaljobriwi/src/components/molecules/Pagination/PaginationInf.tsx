@@ -1,5 +1,4 @@
 "use client"
-import { icons } from '@/components/atoms/Icons/icons';
 import { ICompany } from '@/models/company.model';
 import { IVacant } from '@/models/vacant.model';
 import { useRouter, useSearchParams } from 'next/navigation';

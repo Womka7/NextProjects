@@ -8,7 +8,7 @@ interface IProps{
     panelDetail: 'Vacantes' | 'Companias';
     type: string;
 }
-export const Header=({ subtitle, panelDetail,type}:IProps)=> {
+export const Header=({ subtitle, panelDetail}:IProps)=> {
 
   return (
     <header className='header-page'>
