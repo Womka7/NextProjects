@@ -5,6 +5,7 @@ interface IProps {
     className?: string;
     onClick?: () => void;
     label?: string;
+    disabled?: boolean;
 }
 
 export const Button=({children,className= '',label, onClick}:IProps)=> {

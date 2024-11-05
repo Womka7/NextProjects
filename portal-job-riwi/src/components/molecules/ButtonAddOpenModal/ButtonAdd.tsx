@@ -4,6 +4,7 @@ import './buttonAddStyle.scss'
 import React, { useState } from 'react'
 import { Icon } from '@/components/atoms/Icons/Icon';
 import { ModalFormVacancy } from '@/components/organisms/ModalFormVacancy/ModalFormVacancy';
+import { ModalFormCompany } from '@/components/organisms/ModalFormCompany/ModalFormCompany';
 
 interface IProps {
   panelDetail: 'Vacantes' | 'Companias';
@@ -43,7 +44,11 @@ export const ButtonAdd=({ panelDetail }: IProps) =>{
         );
       case 'Companias':
         return (
-          <h1>holaa</h1>
+          <ModalFormCompany 
+            onClose={handleCloseModal}
+            titlePrimary='Agregar Compañía'
+            editButtonLabel='Agregar'
+          />
         );
       default:
         return null;

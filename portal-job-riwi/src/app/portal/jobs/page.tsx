@@ -1,3 +1,4 @@
+import { PaginationInf } from "@/components/molecules/Pagination/PaginationInf";
 import { Header } from "@/components/organisms/Header/Header";
 import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
 import { Service } from "@/services/portal.service";
@@ -26,6 +27,7 @@ export default async function Jobs({ searchParams }: IJobsProps) {
         <>
             <Header subtitle="Vacantes" panelDetail="Vacantes"  type="Vacantes"/>
             <MainContainerCards  contentType="vacant" data={vacancies} page={page} />
+            <PaginationInf data={vacancies}/>
         </>
     );
 }

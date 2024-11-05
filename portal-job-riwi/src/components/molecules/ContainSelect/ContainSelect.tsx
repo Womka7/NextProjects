@@ -16,7 +16,7 @@ export interface Option {
     return (
       <div className={'containerSelect'}>
         <label>{label}</label>
-        <Select options={options}  name={name} required={required}/>
+        <Select options={options}  name={name} required={required} className='select-vacants'/>
       </div>
     )
   }

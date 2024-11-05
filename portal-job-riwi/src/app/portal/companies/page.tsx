@@ -1,3 +1,4 @@
+import { PaginationInf } from "@/components/molecules/Pagination/PaginationInf";
 import { Header } from "@/components/organisms/Header/Header";
 import { MainContainerCards } from "@/components/organisms/MainContainerCards/MainContainerCards";
 import { Service } from "@/services/portal.service";
@@ -27,6 +28,7 @@ export default async function Companys({ searchParams }: ICompanyProps) {
         <>
             <Header subtitle="Compañías" panelDetail="Companias"  type="Companias"/>
             <MainContainerCards  contentType="company" data={companies} page={page} />
+            <PaginationInf data={companies} />
         </>
     );
 }

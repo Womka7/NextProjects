@@ -12,7 +12,7 @@ import { Parrafo } from '@/components/atoms/Parrafo/Parrafo';
 interface IProps {
     data: IVacant | ICompany;
 }
-export const PaginationInf=({ data }: IProps)=> {
+export const PaginationInf = ({ data }: IProps) => {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -22,27 +22,34 @@ export const PaginationInf=({ data }: IProps)=> {
         router.push(`?${params.toString()}`);
     };
     const currentPage = data.pageable.pageNumber + 1;
-    const paginationConfig = {
-        previous: {
-            isVisible: currentPage !== 1,
-            onClick: () => onPageChange(currentPage - 1),
-            iconName: 'iconmenorque' as keyof typeof icons
-        },
-        next: {
-            isVisible: currentPage !== data.totalPages,
-            onClick: () => onPageChange(currentPage + 1),
-            iconName: 'iconmayorque' as keyof typeof icons
+    const showPrevious = currentPage > 1;
+    const showNext = currentPage < data.totalPages;
+    
+    const handlePrevious = () => {
+        if (currentPage > 1) {
+            onPageChange(currentPage - 1);
         }
-    } as const;
+    };
+
+    const handleNext = () => {
+        if (currentPage < data.totalPages) {
+            onPageChange(currentPage + 1);
+        }
+    };
     return (
         <div className='paginate'>
-            {Object.entries(paginationConfig).map(([key, config]) => (
-                config.isVisible && (<Button key={key} onClick={config.onClick} className='button-pagination'>
-                    <Icon name={config.iconName} />
+            {showPrevious && (
+                <Button onClick={handlePrevious} className='button-pagination'>
+                    <Icon name='iconmenorque' />
                 </Button>
-                )
-            ))}
+            )}
+
             <Parrafo>Página {currentPage} de {data.totalPages}</Parrafo>
+            {showNext && (
+                <Button onClick={handleNext} className='button-pagination'>
+                    <Icon name='iconmayorque' />
+                </Button>
+            )}
         </div>
     )
 }

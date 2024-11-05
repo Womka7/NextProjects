@@ -1,0 +1,39 @@
+@import '../../../app/globals.scss';
+
+.card-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 8px;
+
+    button {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
+        background-color: transparent;
+        border: 2px solid $grey-border;
+        cursor: pointer;
+        
+        &.btn-jobs-edit,
+        &.btn-company-edit {
+            svg {
+                color: $purple-button;
+            }
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &.btn-jobs-delete,
+        &.btn-company-delete {
+            svg {
+                color: $pink-button;
+            }
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

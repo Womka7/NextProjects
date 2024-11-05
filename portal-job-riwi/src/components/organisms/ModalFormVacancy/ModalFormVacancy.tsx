@@ -77,15 +77,15 @@ export const ModalFormVacancy = ({ onClose, titlePrimary, editButtonLabel, idCar
 
     return (
         <Modal onClose={onClose}>
-            <TitleH1 label={titlePrimary}></TitleH1>
+            <TitleH1 label={titlePrimary} className="title-modal"></TitleH1>
             <form className="form-gnrl" onSubmit={SubmitForm }>
                 <ContainInputLabel>
-                    <label htmlFor="titleFormVacancy">Nombre</label>
-                    <Input id="titleFormVacancy" name="title" required={true} value={vacantData?.title}></Input>
+                    <label htmlFor="titleFormVacancy">Título</label>
+                    <Input className="input-vacants" id="titleFormVacancy" name="title" required={true} value={vacantData?.title}></Input>
                 </ContainInputLabel>
                 <ContainInputLabel>
                     <label htmlFor="descriptionVacancy">Descripción</label>
-                    <Textarea id="descriptionVacancy" name="description" required={true} value={vacantData?.description}></Textarea>
+                    <Textarea className="text-area-vacants"  id="descriptionVacancy" name="description" required={true} value={vacantData?.description}></Textarea>
                 </ContainInputLabel>
                 <ContainerSelect name="status" required={true} label="Estado"
                     options={[

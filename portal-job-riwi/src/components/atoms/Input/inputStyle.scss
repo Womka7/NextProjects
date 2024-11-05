@@ -1,14 +1,24 @@
 @import '../../../app/globals.scss';
 .input-focus {
-    width: 100%;
-    height: 40px;
-    padding: 8px 12px;
-    outline: none;
-    font-size: 8px;
-    border-radius: 4px;
-    border: 1px solid $grey-middle;
-    
-      &:focus {
-        outline:none;
-      }
+  width: 100%;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: 2px solid $grey-border;
+  color: $grey-middle;
+  &:focus {
+    outline: none; 
+  }
+}
+
+.input-vacants:focus{
+  border: 2px solid $focus-purple;
+  outline: 3px solid $grey-border;
+  outline-offset: 2px;
+}
+.input-company:focus{
+  border: 2px solid $focus-pink;
+  outline: 3px solid $grey-border;
+  outline-offset: 2px;
 }

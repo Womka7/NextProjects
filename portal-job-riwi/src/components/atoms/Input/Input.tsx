@@ -13,9 +13,10 @@ interface IPropsInput {
 }
 
 export const Input= ({  type = 'text',  placeholder,  name,  value,  onChange, className,id,required}: IPropsInput) =>{
+  const classinputfocus = `input-focus ${className || ''}`.trim();
   return (
     <input
-      className={`input-focus ${className}`}
+      className={classinputfocus}
       type={type}
       placeholder={placeholder}
       name={name}
