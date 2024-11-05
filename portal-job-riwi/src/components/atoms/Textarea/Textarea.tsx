@@ -6,10 +6,11 @@ interface IProps{
     required?:boolean;
     value?:string;
     className?:string;
+    onChange?:(event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-export const Textarea=({ id,name,required,value, className}:IProps)=> {
+export const Textarea=({ id,name,required,value, className,onChange}:IProps)=> {
   const textareafocus = `text-area ${className || ''}`.trim();
   return (
-    <textarea id={id}name={name} required={ required} className={textareafocus} value={value}/>
+    <textarea id={id}name={name} required={ required} className={textareafocus} value={value} onChange={onChange}/>
   )
 }
