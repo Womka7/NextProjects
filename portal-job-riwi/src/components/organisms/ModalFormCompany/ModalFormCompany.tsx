@@ -38,19 +38,19 @@ export const ModalFormCompany= ({ onClose, titlePrimary, editButtonLabel, idCard
 
     const SubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = Object.fromEntries(
-          new FormData(event.target as HTMLFormElement).entries()
-        );
-        console.log(formData);
+        // const formData = Object.fromEntries(
+        //   new FormData(event.target as HTMLFormElement).entries()
+        // );
+        // console.log(formData);
     
         try {
           if (companyData) {
             await useServices.updateCompany(
               companyData.id,
-              formData as unknown as ICreateCompany
+              formData
             );
           } else {
-            await useServices.createCompany(formData as unknown as ICreateCompany);
+            await useServices.createCompany(formData);
           }
           router.refresh();
           onClose()
@@ -58,13 +58,22 @@ export const ModalFormCompany= ({ onClose, titlePrimary, editButtonLabel, idCard
           console.error(error);
         }
       };
-    
+      const [formData, setFormData] = useState<ICreateCompany>({
+        name: '',
+        location: '',
+        contact: '',
+      });
       useEffect(() => {
         const loadCompanyData = async () => {
           if (idCard) {
             try {
               const data = await useServices.findCompanyById(idCard);
               setCompanyData(data);
+              setFormData({
+                name: data.name,
+                location: data.location,
+                contact: data.contact,
+              });
             } catch (error) {
               console.error(error);
             }
@@ -81,15 +90,15 @@ export const ModalFormCompany= ({ onClose, titlePrimary, editButtonLabel, idCard
             <form className="form-gnrl" onSubmit={SubmitForm }>
                 <ContainInputLabel>
                     <label htmlFor="nameFormCompany">Nombre</label>
-                    <Input className="input-company" id="nameFormCompany" name="name" required={true} value={companyData?.name}></Input>
+                    <Input className="input-company" id="nameFormCompany" name="name" required={true} value={formData.name}onChange={(e)=>setFormData((prevData)=>({...prevData, name: e.target.value}))}></Input>
                 </ContainInputLabel>
                 <ContainInputLabel>
                     <label htmlFor="addressFormCompany">Ubicación</label>
-                    <Input className="input-company" id="addressFormCompany" name="location" required={true} value={companyData?.location}></Input>
+                    <Input className="input-company" id="addressFormCompany" name="location" required={true} value={formData.location}onChange={(e)=>setFormData((prevData)=>({...prevData, location: e.target.value}))}></Input>
                 </ContainInputLabel>
                 <ContainInputLabel>
                     <label htmlFor="contacFormCompany">Contacto</label>
-                    <Input className="input-company" id="contacFormCompany" name="contact" required={true} value={companyData?.contact}></Input>
+                    <Input className="input-company" id="contacFormCompany" name="contact" required={true} value={formData.contact}onChange={(e)=>setFormData((prevData)=>({...prevData, contact: e.target.value}))}></Input>
                 </ContainInputLabel>
                 
                 <Button className="btn-company-ok">{editButtonLabel}</Button>

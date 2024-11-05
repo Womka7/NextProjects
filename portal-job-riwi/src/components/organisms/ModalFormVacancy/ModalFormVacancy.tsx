@@ -41,7 +41,7 @@ export const ModalFormVacancy = ({ onClose, titlePrimary, editButtonLabel, idCar
     // const formData = Object.fromEntries(
     //   new FormData(event.target as HTMLFormElement).entries()
     // );
-    console.log(formData);
+    // console.log(formData);
 
     try {
       if (vacantData) {
