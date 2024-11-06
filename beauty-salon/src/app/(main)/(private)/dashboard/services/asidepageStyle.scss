@@ -1,0 +1,18 @@
+main{
+        background: white;
+        min-height:100vh;
+        width   : 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-family: roboto;
+}
+.btnaside{
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: green;
+    border-radius: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+}

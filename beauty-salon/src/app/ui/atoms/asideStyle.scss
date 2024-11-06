@@ -1,0 +1,11 @@
+.contain-aside{
+    min-height: 100vh;
+    width: 30%;
+    padding: 5px;
+    border: 2px solid green ;
+    background: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
