@@ -95,7 +95,7 @@ export const LoginForm = () => {
                 />
                 <button
                     type="submit"
-                    className="w-full px-4 py-2 text-white font-medium rounded-lg bg-blue-500 hover:bg-blue-600"
+                    className="w-full px-4 py-2 text-white font-medium rounded-lg bg-gray-800 hover:bg-gray-900"
                 >Iniciar Sesión</button>
             </form>
         )

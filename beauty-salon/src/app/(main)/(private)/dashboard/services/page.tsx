@@ -5,15 +5,7 @@ import './asidepageStyle.scss'
 
 export default function ServicesPage() {
   return (
-    <main>
-      <Aside>
-      <Button className='btnaside'>Servicios</Button>
-      <Button className='btnaside'>Citas</Button>
-      <Button className='btnaside'>Clientes</Button>
-      <Button className='btnaside'>Empleados</Button>
-      </Aside>
-      {/* <h1>ServicesPage</h1>
-      <p>Hola podemos vizualizar desde el service</p> */}
-    </main>
+    <h1>Services</h1>
+      
   )
 }
