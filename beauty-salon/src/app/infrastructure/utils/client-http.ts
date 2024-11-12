@@ -1,18 +1,27 @@
+import { authOptions, CustomSession } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
+
 const defaultBaseUrl = "https://beautysalongates-production.up.railway.app/api/v1"
 
 export class HttpClient{
   private baseUrl : string;
 
   constructor(baseUrl?: string) {
+    if(defaultBaseUrl){}
     this.baseUrl = baseUrl || defaultBaseUrl;
   }
 
   private async getHeader() {
-    return {
+    const session = (await getServerSession(authOptions)) as CustomSession  | null;
+
+    const headers: HeadersInit = {
       "Content-Type": "application/json",
-      // "Autorizaiton": "Berarer token"
-      // https://next-auth.js.org/configuration/nextjs#getserversession
+    };
+    if (session?.user?.token) {
+      headers["Authorization"] = `Bearer ${session.user.token}`;
     }
+  
+    return headers;
   }
 
   private async handleResponse(response: Response){
@@ -34,13 +43,12 @@ export class HttpClient{
     return this.handleResponse(response)
   }
 
-  async delete<T>(url: string): Promise<T>{
+  async delete(url: string){
     const headers = await this.getHeader();
-    const response = await fetch(`${this.baseUrl}/${url}`,{
+    await fetch(`${this.baseUrl}/${url}`,{
       headers: headers,
       method: "DELETE",
     })
-    return this.handleResponse(response)
   }
 
   async post <T, B> (url: string, body: B): Promise<T>{

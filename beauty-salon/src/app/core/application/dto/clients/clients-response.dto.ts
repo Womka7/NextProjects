@@ -1,3 +1,5 @@
+import { Appointment } from "./clients.dto";
+
 export interface IClientsResponse {
     id:           number;
     firstName:    string;

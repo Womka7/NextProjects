@@ -1,4 +1,6 @@
-interface IClient {
+import { IService } from "../services/service.dto";
+
+export interface IClients {
     id: number;
     firstName: string;
     lastName: string;
@@ -7,7 +9,11 @@ interface IClient {
     appointments: Appointment[];
 }
 
-interface Pageable {
+export interface IClientsParam {
+    page: number;
+    size: number;
+}
+export interface Pageable {
     pageNumber: number;
     pageSize: number;
     sort: Sort;
@@ -17,14 +23,14 @@ interface Pageable {
 }
 
 
-interface Sort {
+export interface Sort {
     unsorted: boolean;
     sorted: boolean;
     empty: boolean;
 }
 
-interface IClientsResponse {
-    content: IClient[];
+export interface IAllClientsResponse {
+    content: IClients[];
     pageable: Pageable;
     totalPages: number;
     totalElements: number;
@@ -37,17 +43,7 @@ interface IClientsResponse {
     empty: boolean;
 }
 
-
-
-interface IService {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-  }
-  
-  
-  interface IEmployee {
+  export interface IEmployee {
     id: number;
     firstName: string;
     lastName: string;
@@ -56,7 +52,7 @@ interface IService {
     role: 'ADMIN' | 'USER' | 'OTHER_ROLE'; 
   }
   
-  interface Appointment {
+  export interface Appointment {
     id: number;
     dateTime: string; 
     duration: number;
