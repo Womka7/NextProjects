@@ -7,7 +7,6 @@ export class HttpClient{
   private baseUrl : string;
 
   constructor(baseUrl?: string) {
-    if(defaultBaseUrl){}
     this.baseUrl = baseUrl || defaultBaseUrl;
   }
 

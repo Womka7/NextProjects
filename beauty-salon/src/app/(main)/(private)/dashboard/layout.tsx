@@ -1,7 +1,7 @@
 'use client';
 import React from 'react'
 import AuthGuard from './guard/AuthGuard'
-import { HomeIcon, UserIcon, SettingsIcon, LucideIcon, WandSparkles, Users, CalendarDays, FileUser } from 'lucide-react';
+import { LucideIcon, WandSparkles, Users, CalendarDays, FileUser } from 'lucide-react';
 import { Aside } from '@/app/ui/template/aside/Aside';
 
 interface SidebarItem {
