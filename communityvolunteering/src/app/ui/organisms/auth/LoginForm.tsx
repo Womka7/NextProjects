@@ -37,7 +37,7 @@ export const LoginForm = () => {
         try {
             const result = await signIn("credentials", {
               redirect: false,
-              username: data.email,
+              email: data.email,
               password: data.password,
             });
       
