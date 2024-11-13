@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+$background: rgb(219,234,253);
+$background-gradient: linear-gradient(180deg, rgba(219,234,253,1) 21%, rgba(243,251,255,1) 56%, rgba(255,255,255,1) 100%);
+/*Title Header Nav page initial*/
+$title-blue-rey: rgb(35, 103, 239);
+$title-main-header: rgb(9, 9, 8);
+
+// color boton 
+$button-black: rgb(24, 24, 23);
+$button-white: #ffffff;
+
+body {
+  background: $background-gradient;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
