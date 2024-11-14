@@ -67,7 +67,6 @@ export const authOptions: NextAuthOptions = {
     session: {
         strategy: "jwt",
     },
-    secret:'hola',
     callbacks: {
         async jwt({ token, user }) {
             if (user) {
@@ -88,9 +87,7 @@ export const authOptions: NextAuthOptions = {
             return customSession;
         },
     },
-};
-
-export default NextAuth(authOptions);
+}
 
 export const GET = NextAuth(authOptions);
 export const POST = NextAuth(authOptions);
