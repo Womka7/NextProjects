@@ -5,9 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation"
 import { ILoginRequest } from "@/app/core/application/dto/auth/ILoginRequest"
 import { signIn } from "next-auth/react";
-import { ErrorResponse, FieldError } from "@/app/core/application/dto/common/error-response.dto";
+// import { ErrorResponse, FieldError } from "@/app/core/application/dto/common/error-response.dto";
 import { FormField } from "../../molecules/Common/FormField";
 import Link from "next/link";
+import { Button } from "../../atoms/Button";
 
 export const loginScheme = yup.object()
     .shape({
@@ -25,7 +26,7 @@ export const LoginForm = () => {
     const {
         control,
         handleSubmit,
-        setError,
+        // setError,
         formState: { errors }
     } = useForm<ILoginRequest>({
         mode: "onChange",
@@ -46,7 +47,8 @@ export const LoginForm = () => {
 
             if (result?.error) {
                 console.log("Ocurrio un error", JSON.parse(result.error));
-                handleError(JSON.parse(result.error))
+                JSON.parse(result.error)
+                // handleError
                 return;
             }
             router.push("/dashboard/services")
@@ -55,25 +57,25 @@ export const LoginForm = () => {
         }
     };
 
-    const handleError = (error: unknown) => {
-        const errorData = error as ErrorResponse
-        if (errorData && errorData.errors) {
-            if (Array.isArray(errorData.errors) && 'field' in errorData.errors[0]) {
-                errorData.errors.forEach((fieldError) => {
-                    const { field, error } = fieldError as FieldError;
-                    setError(field as keyof ILoginRequest, {
-                        message: error,
-                    });
-                });
-            } else {
-                if ("message" in errorData.errors[0]) {
-                    setError("email", {
-                        message: errorData.errors[0].message,
-                    });
-                }
-            }
-        }
-    };
+    // const handleError = (error: unknown) => {
+    //     const errorData = error as ErrorResponse
+    //     if (errorData && errorData.errors) {
+    //         if (Array.isArray(errorData.errors) && 'field' in errorData.errors[0]) {
+    //             errorData.errors.forEach((fieldError) => {
+    //                 const { field, error } = fieldError as FieldError;
+    //                 setError(field as keyof ILoginRequest, {
+    //                     message: error,
+    //                 });
+    //             });
+    //         } else {
+    //             if ("message" in errorData.errors[0]) {
+    //                 setError("email", {
+    //                     message: errorData.errors[0].message,
+    //                 });
+    //             }
+    //         }
+    //     }
+    // };
 
     return (
         <form className="w-full max-w-sm mx-auto p-4 space-y-4" onSubmit={handleSubmit(handleLogin)}>
@@ -95,10 +97,10 @@ export const LoginForm = () => {
                 error={errors.password}
                 placeholder="Ingresa Tu Contraseña"
             />
-            <button
+            <Button
                 type="submit"
                 className="w-full px-4 py-2 text-white font-medium rounded-lg bg-gray-800 hover:bg-gray-900"
-            >Iniciar Sesión</button>
+            >Iniciar Sesión</Button>
             <div className="flex flex-col items-center space-y-2 text-sm">
                 <Link href="/" className="text-blue-500 hover:text-blue-700"
                 > ¿Olvidaste tu contraseña? </Link>

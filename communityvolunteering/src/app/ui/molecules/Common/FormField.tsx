@@ -16,7 +16,7 @@ interface IProps<T extends FieldValues> {
 export const FormField = <T extends FieldValues>({ label, type, name, control, error, id, placeholder }: IProps<T>) => {
     return (
         <div className='w-full flex flex-col mb-4'>
-            <Label htmlFor={id || label.toLocaleLowerCase()} className={` text-sm font-medium`}>{label}</Label>
+            <Label htmlFor={id || label.toLowerCase()} className={` text-sm font-medium`}>{label}</Label>
             <Controller
                 name={name}
                 control={control}

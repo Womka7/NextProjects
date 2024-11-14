@@ -1,3 +1,5 @@
+import { Button } from "@/app/ui/atoms/Button";
+
 export default function Home() {
   return (
     <>
@@ -9,8 +11,8 @@ export default function Home() {
 
           <nav className=" sm:flex h-full items-center">
             <ul className="flex items-center gap-10 text-lg">
-              <li><a href="/login"><button className="hover:"> Iniciar sesión</button></a></li>
-              <li><a href="/register"><button className="bg-black text-white px-4 py-2 rounded-md">Registrarse</button></a></li>
+              <li><a href="/login"><Button className="hover:"> Iniciar sesión</Button></a></li>
+              <li><a href="/register"><Button className="bg-black text-white px-4 py-2 rounded-md">Registrarse</Button></a></li>
             </ul>
           </nav>
         </div>
@@ -27,15 +29,14 @@ export default function Home() {
 
           <div className="w-full flex flex-wrap justify-center gap-5">
             <div>
-              <button className="bg-black text-white w-full h-[50px] text-lg rounded-md flex items-center justify-center gap-4 px-5">Explorar Proyectos</button>
+              <Button className="bg-black text-white w-full h-[50px] text-lg rounded-md flex items-center justify-center gap-4 px-5">Explorar Proyectos</Button>
             </div>
             <div>
-              <button className="bg-white text-black border border-gray-300 w-full h-[50px] text-lg rounded-md flex items-center justify-center gap-4 px-5">Comenzar como Organizador</button>
+              <Button className="bg-white text-black border border-gray-300 w-full h-[50px] text-lg rounded-md flex items-center justify-center gap-4 px-5">Comenzar como Organizador</Button>
             </div>
           </div>
         </div>
       </main>
-
     </>
   );
 }

@@ -53,7 +53,7 @@ export const authOptions: NextAuthOptions = {
                     return {
                         email: response.data.user.email,
                         id:subId,
-                        role: response.data.user.email,
+                        role: response.data.user.role,
                         photo: response.data.user.photo,
                         token: response.data.access_token,
                     } as AuthUser;
