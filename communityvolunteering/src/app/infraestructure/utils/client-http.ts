@@ -10,11 +10,11 @@ export class HttpClient{
     this.baseUrl = baseUrl || defaultBaseUrl;
   }
 
-  private async getHeader(formData:boolean=false) {
+  private async getHeader(dataform:boolean=false) {
     const session = (await getServerSession(authOptions)) as CustomSession  | null;
 
     const headers: HeadersInit = {  };
-    if (formData === false) {
+    if (dataform === false) {
       headers["Content-Type"] = "application/json";
     } 
 
@@ -52,14 +52,16 @@ export class HttpClient{
     })
   }
 
-  async post <T, B> (url: string, body: B): Promise<T>{
-    const headers = await this.getHeader();
+  async post <T, B> (url: string, body: B, dataform: boolean = false): Promise<T>{
+    const headers = await this.getHeader(dataform);
+    console.log("body del post",body)
+
     const response = await fetch(`${this.baseUrl}/${url}`,{
       headers: headers,
       method: "POST",
-      body: JSON.stringify(body),
+      body: dataform ? body as FormData: JSON.stringify(body),
     })
-    console.log(response);
+    console.log("respuesta del post",response);
     return this.handleResponse(response);
   }
 

@@ -106,7 +106,7 @@ export const LoginForm = () => {
                 > ¿Olvidaste tu contraseña? </Link>
                 <div className="flex flex-row items-center ">
                    <p className="pr-2">¿No tienes una cuenta?</p>{" "}
-                    <Link href="/auth/register" className="text-blue-500 hover:text-blue-700"> 
+                    <Link href="/register" className="text-blue-500 hover:text-blue-700"> 
                      Registrate aquí </Link>
                 </div>
             </div>

@@ -1,16 +1,18 @@
 "use client"
-
-import { IRegisterRequest } from "@/app/core/application/dto/auth/IRegisterRequest"
-import { FormField } from "../../molecules/Common/FormField"
-import { Button } from "../../atoms/Button"
-import { useForm } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-import { useRouter } from "next/navigation"
+import { IRegisterRequest } from "@/app/core/application/dto/auth/IRegisterRequest";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { FormField } from "../../molecules/Common/FormField";
+import { FormSelectField } from "../../molecules/Common/FormSelectField";
+import { FormInputFile } from "../../molecules/Common/FormInputFile";
+import { Button } from "../../atoms/Button";
+import Link from "next/link";
 
 export const registerScheme = yup.object()
     .shape({
-        email: yup
+        email: yup 
             .string()
             .email("El correo es inválido")
             .required("El correo es obligatorio"),
@@ -24,9 +26,13 @@ export const registerScheme = yup.object()
         role: yup
             .string()
             .required("El rol es obligatorio"),
-        
+        photo: yup
+            .mixed<File>()
+            .nullable()
+            .notRequired()
+
     })
-export const RegisterForm=()=>{
+const RegisterForm = () => {
     const {
         control,
         handleSubmit,
@@ -40,36 +46,37 @@ export const RegisterForm=()=>{
     const router = useRouter()
     const handleRegister = async (data: IRegisterRequest) => {
         try {
-            const dataform=new FormData();
-            dataform.append("name",data.name);
-            dataform.append("email",data.email);
-            dataform.append("password",data.password);
-            dataform.append("role",data.role);
-            
-            if (data.photo){
-                dataform.append("photo",data.photo);
+            const dataform = new FormData();
+
+            dataform.append("name", data.name);
+            dataform.append("email", data.email);
+            dataform.append("password", data.password);
+            dataform.append("role", data.role);
+
+            if (data.photo instanceof File) {
+                dataform.append("photo", data.photo);
             }
-            const response = await fetch("/api/users/post", {
+            const response = await fetch("/api/users/registeruser", {
                 method: "POST",
                 body: dataform
             });
-            console.log("desde form register user",response);
-            if (!response.ok){
+            console.log("desde form register user", response);
+            if (!response.ok) {
                 throw new Error("Error en el registro de usuario");
             }
             alert("Registro exitoso!");
 
-            router.push("/dashboard/services")
+            router.push('/login');
+            return await response.json();
         } catch (error) {
             console.log(error);
         }
     };
 
 
-    return(
+    return (
         <form className="w-full max-w-sm mx-auto p-4 space-y-4" onSubmit={handleSubmit(handleRegister)}>
-            <h2 className="text-2xl font-semibold text-center">Iniciar Sesión</h2>
-            <p className="text-center text-sm mb-4 text-gray-600">Ingresa tus credenciales para acceder a tu cuenta</p>
+            <h2 className="text-2xl font-semibold text-center">Registrar Usuarios</h2>
             <FormField<IRegisterRequest>
                 control={control}
                 type="email"
@@ -92,13 +99,36 @@ export const RegisterForm=()=>{
                 label="Nombre"
                 name="name"
                 error={errors.name}
-                placeholder="Ingresa Tu Nombre"
+                placeholder="Ingrese su Nombre"
+            />
+            <FormSelectField<IRegisterRequest>
+                control={control}
+                options={[
+                    { value: "organizer", label: "Organizador" },
+                    { value: "volunteer", label: "Usuario" }
+                ]}
+                name="role"
+                label="Rol"
+                placeholder="Selecciona Rol"
+            />
+            <FormInputFile<IRegisterRequest>
+                control={control}
+                name="photo"
+                label="Adjunta tu foto"
             />
             <Button
                 type="submit"
                 className="w-full px-4 py-2 text-white font-medium rounded-lg bg-gray-800 hover:bg-gray-900"
             >Registrar Usuario</Button>
-            
+
+            <div className="flex items-center justify-center">
+                <p className="pr-2">¿Ya tienes cuenta?</p>{" "}
+                <Link href="/login" className="text-blue-500 hover:text-blue-700">
+                    Ingresa aquí </Link>
+            </div>
+
         </form>
     )
 }
+
+export default RegisterForm;

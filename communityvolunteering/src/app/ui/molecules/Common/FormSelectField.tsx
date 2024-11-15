@@ -1,15 +1,18 @@
-'use client'
 import { Control, Controller, FieldError, FieldValues, Path } from "react-hook-form";
-import { Label } from "../../atoms";
+import { Input, Label } from "../../atoms";
+import { InputFile } from "../../atoms/InputFile";
+import { Select } from "../../atoms/Select";
 
 interface IProps<T extends FieldValues> {
     label: string;
     name: Path<T>;
     control: Control<T>;
     id?: string;
+    placeholder: string;
+    options: { value: string, label: string }[];
 }
 
-export const FormInputFile = <T extends FieldValues>({ label, control, name, id }: IProps<T>) => {
+export const FormSelectField = <T extends FieldValues>({ label, control, name, id, options, placeholder }: IProps<T>) => {
     return (
         <div className="w-full flex flex-col mb-4">
             <Label htmlFor={id || label.toLowerCase()} className="text-sm font-medium">{label}</Label>
@@ -17,14 +20,9 @@ export const FormInputFile = <T extends FieldValues>({ label, control, name, id 
                 name={name}
                 control={control}
                 render={({ field }) => (
-                    <input id={id || label.toLowerCase()}
-                        type="file"
-                        onChange={(e) => {
-                            const file = e.target.files?.[0] || null;
-                            field.onChange(file);
-                        }} />
+                    <Select id={id || label.toLowerCase()}{...field}  options={options} placeholder={placeholder} {...field} />
                 )}
-            />
+            />   
         </div>
     )
 }
