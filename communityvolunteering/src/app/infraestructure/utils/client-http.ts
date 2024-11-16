@@ -34,22 +34,27 @@ export class HttpClient{
   }
 
 
-  async get<T>(url: string): Promise<T> {
+  async get<T>(url: string, isBinary: boolean = false): Promise<T> {
     const headers = await this.getHeader();
     const response = await fetch(`${this.baseUrl}/${url}`,{
       headers: headers,
       method: "GET",
       cache: "no-store"
     })
+    if (isBinary) {
+      return response.arrayBuffer() as unknown as T;
+    }
     return this.handleResponse(response)
   }
 
-  async delete(url: string){
+  async delete<T>(url: string): Promise<T> {
     const headers = await this.getHeader();
-    await fetch(`${this.baseUrl}/${url}`,{
+    const response = await fetch(`${this.baseUrl}/${url}`, {
       headers: headers,
       method: "DELETE",
-    })
+    });
+
+    return this.handleResponse(response);
   }
 
   async post <T, B> (url: string, body: B, dataform: boolean = false): Promise<T>{

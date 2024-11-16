@@ -8,7 +8,9 @@ export class UserService implements PRegisterUser {
     constructor() {
         this.clientHttp = new HttpClient();
     }
-
+    async getUsers(): Promise<IGetUsersResponse>{
+        return this.clientHttp.get<IGetUsersResponse>("users");
+    }
     async createUser(req: FormData): Promise<IRegisterResponse> {
         const dataform = true;
         return this.clientHttp.post<IRegisterResponse, FormData>(
