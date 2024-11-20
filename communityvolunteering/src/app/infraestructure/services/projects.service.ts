@@ -50,7 +50,7 @@ export class ProjectsServices implements PProjects {
 
   async updateProject(id: number, project: IEditProjectsRequest): Promise<IEditProjectsResponse> {
     try {
-      const response = await this.clientHttp.put<IEditProjectsResponse, IEditProjectsRequest>(`projects/${id}`, project);
+      const response = await this.clientHttp.patch<IEditProjectsResponse, IEditProjectsRequest>(`projects/${id}`, project);
       return response;
     } catch (error) {
       console.log(error);

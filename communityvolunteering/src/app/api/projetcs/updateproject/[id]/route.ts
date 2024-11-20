@@ -1,7 +1,7 @@
 import { ProjectsServices } from "@/app/infraestructure/services/projects.service";
 import { NextResponse } from "next/server";
 
-export async function PUT(request: Request,
+export async function PATCH(request: Request,
     { params }: { params: Promise<{ id: number }> }) {
     try {
         const body: IEditProjectsRequest = await request.json();

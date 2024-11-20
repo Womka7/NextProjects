@@ -54,7 +54,7 @@ const UpdateForm = ({ onClose, Id }: Iprops) => {
         setIsLoading(true);
         try {
             const response = await fetch(`/api/projetcs/updateproject/${Id}`, {
-                method: "PUT",
+                method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             });
